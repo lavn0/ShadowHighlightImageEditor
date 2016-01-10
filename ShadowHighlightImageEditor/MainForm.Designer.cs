@@ -35,6 +35,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -54,7 +56,8 @@
             // 
             this.ファイルToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.開くToolStripMenuItem,
-            this.クリップボードの画像を読み込むToolStripMenuItem});
+            this.クリップボードの画像を読み込むToolStripMenuItem,
+            this.保存ToolStripMenuItem});
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
             this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.ファイルToolStripMenuItem.Text = "ファイル(&F)";
@@ -101,6 +104,19 @@
             this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
             this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.FileName = "image";
+            this.saveFileDialog.Filter = "JPEGファイル|*.jpg;*.jpeg";
+            // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.保存ToolStripMenuItem.Text = "保存";
+            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -130,6 +146,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ToolStripMenuItem クリップボードの画像を読み込むToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 

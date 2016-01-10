@@ -89,5 +89,27 @@ namespace ShadowHighlightImageEditor
                 Math.Abs(point1.X - point2.X),
                 Math.Abs(point1.Y - point2.Y));
         }
+
+        private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.pictureBox1.Image == null)
+            {
+                MessageBox.Show("元画像が読み込まれていません。");
+                return;
+            }
+
+            if (this.saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (var bmp = new Bitmap(this.pictureBox1.Image))
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    var path = new GraphicsPath(FillMode.Alternate);
+                    path.AddRectangle(new Rectangle(0, 0, this.pictureBox1.Image.Width, this.pictureBox1.Image.Height));
+                    path.AddRectangle(CreateRectangle(this.pointStart.Value, this.pointEnd.Value));
+                    g.FillPath(this.grayBrush, path);
+                    bmp.Save(this.saveFileDialog.FileName);
+                }
+            }
+        }
     }
 }
