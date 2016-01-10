@@ -31,11 +31,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.開くToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.クリップボードの画像を読み込むToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.クリップボードの画像を読み込むToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -61,9 +63,17 @@
             // 
             this.開くToolStripMenuItem.Name = "開くToolStripMenuItem";
             this.開くToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.開くToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.開くToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.開くToolStripMenuItem.Text = "開く";
             this.開くToolStripMenuItem.Click += new System.EventHandler(this.開くToolStripMenuItem_Click);
+            // 
+            // クリップボードの画像を読み込むToolStripMenuItem
+            // 
+            this.クリップボードの画像を読み込むToolStripMenuItem.Name = "クリップボードの画像を読み込むToolStripMenuItem";
+            this.クリップボードの画像を読み込むToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.クリップボードの画像を読み込むToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.クリップボードの画像を読み込むToolStripMenuItem.Text = "クリップボードの画像を読み込む";
+            this.クリップボードの画像を読み込むToolStripMenuItem.Click += new System.EventHandler(this.クリップボードの画像を読み込むToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -78,19 +88,25 @@
             // 
             this.openFileDialog.Filter = "画像ファイル|*.jpg;*.jpeg;*.gif;*.png";
             // 
-            // クリップボードの画像を読み込むToolStripMenuItem
+            // pictureBox2
             // 
-            this.クリップボードの画像を読み込むToolStripMenuItem.Name = "クリップボードの画像を読み込むToolStripMenuItem";
-            this.クリップボードの画像を読み込むToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.クリップボードの画像を読み込むToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
-            this.クリップボードの画像を読み込むToolStripMenuItem.Text = "クリップボードの画像を読み込む";
-            this.クリップボードの画像を読み込むToolStripMenuItem.Click += new System.EventHandler(this.クリップボードの画像を読み込むToolStripMenuItem_Click);
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(284, 237);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox2_Paint);
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
+            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -99,6 +115,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +129,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ToolStripMenuItem クリップボードの画像を読み込むToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
