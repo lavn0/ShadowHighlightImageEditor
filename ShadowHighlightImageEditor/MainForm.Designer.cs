@@ -33,6 +33,7 @@
             this.開くToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.クリップボードの画像を読み込むToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,8 @@
             // ファイルToolStripMenuItem
             // 
             this.ファイルToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.開くToolStripMenuItem});
+            this.開くToolStripMenuItem,
+            this.クリップボードの画像を読み込むToolStripMenuItem});
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
             this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.ファイルToolStripMenuItem.Text = "ファイル(&F)";
@@ -75,6 +77,14 @@
             // openFileDialog
             // 
             this.openFileDialog.Filter = "画像ファイル|*.jpg;*.jpeg;*.gif;*.png";
+            // 
+            // クリップボードの画像を読み込むToolStripMenuItem
+            // 
+            this.クリップボードの画像を読み込むToolStripMenuItem.Name = "クリップボードの画像を読み込むToolStripMenuItem";
+            this.クリップボードの画像を読み込むToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.クリップボードの画像を読み込むToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.クリップボードの画像を読み込むToolStripMenuItem.Text = "クリップボードの画像を読み込む";
+            this.クリップボードの画像を読み込むToolStripMenuItem.Click += new System.EventHandler(this.クリップボードの画像を読み込むToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -101,6 +111,7 @@
         private System.Windows.Forms.ToolStripMenuItem 開くToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem クリップボードの画像を読み込むToolStripMenuItem;
     }
 }
 

@@ -26,5 +26,18 @@ namespace ShadowHighlightImageEditor
                 this.pictureBox1.Image = image;
             }
         }
+
+        private void クリップボードの画像を読み込むToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var image = Clipboard.GetImage();
+            if (image == null)
+            {
+                MessageBox.Show("クリップボードに画像がありません。");
+                return;
+            }
+
+            this.pictureBox1.Image?.Dispose();
+            this.pictureBox1.Image = image;
+        }
     }
 }
