@@ -16,5 +16,15 @@ namespace ShadowHighlightImageEditor
         {
             InitializeComponent();
         }
+
+        private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var image = Image.FromFile(openFileDialog.FileName);
+                this.pictureBox1.Image?.Dispose();
+                this.pictureBox1.Image = image;
+            }
+        }
     }
 }
